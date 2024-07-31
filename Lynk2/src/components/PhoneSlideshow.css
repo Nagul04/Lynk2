@@ -1,0 +1,18 @@
+.phone-slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .phone-slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .phone-slideshow-image-hidden {
+    opacity: 0;
+  }
+  
