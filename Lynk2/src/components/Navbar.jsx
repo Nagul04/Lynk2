@@ -1,37 +1,18 @@
 import React from 'react';
+import './navbar.css';
 
 const Navbar = () => {
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.logo}>
-        <img src="/path/to/logo.png" alt="Logo" style={styles.logoImage} />
-        <span style={styles.siteName}>Lynk</span>
+    <nav className="navbar">
+      <div className="logo">
+        <img
+          src="https://github.com/Neeladas03/Lynk2/blob/main/Lynk2/src/assets/Logo.jpg?raw=true"
+          alt="Logo"
+          className="logoImage"
+        />
       </div>
     </nav>
   );
-};
-
-const styles = {
-  navbar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '10px 20px',
-    backgroundColor: '#fff',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-  },
-  logo: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoImage: {
-    height: '40px',
-    marginRight: '10px',
-  },
-  siteName: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-  },
 };
 
 export default Navbar;
