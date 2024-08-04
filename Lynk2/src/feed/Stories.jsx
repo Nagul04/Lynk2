@@ -1,4 +1,5 @@
 import React from 'react';
+import { Avatar } from '@nextui-org/react';
 import './Stories.css';
 
 const friends = [
@@ -14,15 +15,18 @@ const friends = [
   'Pavan', 'Ritu', 'Sagar', 'Tejas', 'Urvashi', 'Vishal', 'Winston', 'Xavi', 'Yogesh', 'Zubin'
 ];
 
-const friendsWithStories = friends.slice(0 , );
+const friendsWithStories = friends.slice(0, ); 
 
 const Stories = () => {
   return (
-    <div className="stories1">
+    <div className="stories-container">
       {friendsWithStories.map((friend, index) => (
         <div key={index} className="story">
-          <img className='image' src={`https://via.placeholder.com/60?text=${friend}} alt={${friend}'s story`} />
-          <span>{friend}</span>
+          <Avatar 
+            src={`https://i.pravatar.cc/150?u=${friend}`}
+            alt={`${friend}'s story`}
+          />
+          <span className="friend-name">{friend}</span>
         </div>
       ))}
     </div>

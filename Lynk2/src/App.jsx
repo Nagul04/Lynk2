@@ -5,6 +5,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import Home from './pages/Home';
 import Feed from './feed/Feed';
 
+
 const App = () => {
   return (
     <Router>

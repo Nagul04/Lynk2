@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const handleHomeClick = (e) => {
-    e.preventDefault(); // Prevent default link behavior
+    e.preventDefault(); 
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -12,6 +12,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+            <div className="navbar-item">
+          <img src="https://github.com/Neeladas03/Lynk2/blob/main/Lynk2/public/Logo1-removebg-preview1.png?raw=true" alt="logo" className='navlogo'/>
+      </div>
       <div className="navbar-item">
           <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home" onClick={handleHomeClick}/>
           <span>Home</span>

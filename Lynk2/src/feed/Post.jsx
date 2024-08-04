@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import './Post.css';
 
 const friends = [
@@ -30,16 +30,9 @@ const Post = React.forwardRef(({ post }, ref) => {
 
   const handleComment = (e) => {
     e.preventDefault();
-    try {
-      if (!commented) {
-        setComments([comment]);
-        setCommented(true);
-      }
-      setComment('');
-      setShowCommentBox(false);
-    } catch (error) {
-      console.error('Error handling comment', error);
-    }
+    setComments([...comments, comment]);
+    setComment('');
+    setShowCommentBox(false);
   };
 
   const handleShare = () => {

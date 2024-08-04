@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Post from './Post';
 import './InfiniteScrollComponent.css';
+import test1 from '/src/test1.json';
+import test2 from '/src/test2.json';
 
 const customPosts = [
-  { id: 1, url:"https://akm-img-a-in.tosshub.com/indiatoday/images/story/201902/Aj.jpeg"  },
-  { id: 2, url: "https://images.lifestyleasia.com/wp-content/uploads/sites/2/2024/05/24191916/Untitled-design-2024-05-24T164902.587-1600x900.jpg"},
-  { id: 3, url: "https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2022-12/Fjodjh5XwAEG79K.jpg.png?itok=JiLQhu1X"},
-  { id: 4, url: "https://i0.wp.com/fitnessvolt.com/wp-content/uploads/2023/06/Jay-Cutlers-Quad-Stomp-Pose-699x1024.jpeg" }
+  { id: 1, url: test1.data[0].url },
+  { id: 2, url: test1.data[1].url },
+  { id: 3, url: test1.data[2].url },
+  { id: 4, url: test2.data.find(item => item.id === "yTvddccckkBAEM").url }
 ];
 
 const getRandomPosts = (posts) => {
@@ -23,42 +25,35 @@ const InfiniteScrollComponent = () => {
 
   const fetchPosts = async (page) => {
     setLoading(true);
-    const newPosts = customPosts.map(post => ({
-      ...post,
-      id: post.id + page * customPosts.length
-    }));
-    setPosts((prevPosts) => [...prevPosts, ...getRandomPosts(newPosts)]);
+    const newPosts = getRandomPosts(customPosts); 
+    setPosts((prevPosts) => [...prevPosts, ...newPosts]);
     setLoading(false);
   };
 
-  useEffect(() => {
-    if (page > 1) fetchPosts(page);
-  }, [page]);
-
-  const lastPostRef = useCallback((node) => {
+  const lastPostElementRef = useCallback((node) => {
     if (loading) return;
     if (observer.current) observer.current.disconnect();
-
     observer.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         setPage((prevPage) => prevPage + 1);
       }
     });
-
     if (node) observer.current.observe(node);
   }, [loading]);
 
+  useEffect(() => {
+    fetchPosts(page);
+  }, [page]);
+
   return (
-    <div className="feed-container">
-      <h1></h1>
+    <div className="infinite-scroll-component">
       {posts.map((post, index) => {
         if (index === posts.length - 1) {
-          return <Post ref={lastPostRef} key={post.id} post={post} />;
-        } else {
-          return <Post key={post.id} post={post} />;
+          return <Post ref={lastPostElementRef} key={index} post={post} />;
         }
+        return <Post key={index} post={post} />;
       })}
-      {loading && <p>Loading...</p>}
+      {loading && <p>Loading more posts...</p>}
     </div>
   );
 };
