@@ -10,22 +10,31 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="fp-container">
-      <h1>Forgot Password</h1>
-      <p>Enter your email address or username and we’ll send you a link to reset your password.</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email address or username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button type="submit">Send Reset Link</button>
-      </form>
-      <p className="back-login">
-        <a href="/">Back to Login</a>
-      </p>
+    <div className="fp">
+      <div className="fp-container">
+        <div className="logo">
+          <img
+            src="https://github.com/Neeladas03/Lynk2/blob/main/Lynk2/public/Logo1-removebg-preview1.png?raw=true"
+            alt="Lynk Logo"
+          />
+          <h4>Lynk</h4>
+        </div>
+        
+        <h1>Forgot Password</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit">Send Reset Link</button>
+        </form>
+        <p className="back-login">
+          <a href="/">Back to Login</a>
+        </p>
+      </div>
     </div>
   );
 };

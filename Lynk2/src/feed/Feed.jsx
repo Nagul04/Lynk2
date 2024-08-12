@@ -4,7 +4,6 @@ import Stories from './Stories';
 import InfiniteScrollComponent from './InfiniteScrollComponent';
 import test0 from '/src/test0.json';
 import test1 from '/src/test1.json';
-import test2 from '/src/test2.json';
 import test3 from '/src/test3.json';
 import test4 from '/src/test4.json';
 import test5 from '/src/test5.json';

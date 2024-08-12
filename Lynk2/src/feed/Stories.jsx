@@ -3,7 +3,7 @@ import { Avatar } from '@nextui-org/react';
 import './Stories.css';
 
 const friends = [
-  'Das', 'Maddy54', 'Nckx', 'Rudresh', 'Arun', 'Bala', 'Chitra', 'Divya', 'Eashwar', 'Gopi',
+  'Das', 'Maddy69', 'Nckxxx', 'Rudresh', 'Arun', 'Suhail', 'Chitra', 'Divya', 'Eashwar', 'Gopi',
   'Hari', 'Ishaan', 'Jay', 'Kiran', 'Lakshmi', 'Meera', 'Naveen', 'Om', 'Pooja', 'Qadir',
   'Ravi', 'Sita', 'Tina', 'Uma', 'Vikram', 'Waseem', 'Xavier', 'Yamini', 'Zara', 'Ashok',
   'Bhuvana', 'Charan', 'Devi', 'Esha', 'Farhan', 'Gayathri', 'Harish', 'Indira', 'Jeeva', 'Kalai',
