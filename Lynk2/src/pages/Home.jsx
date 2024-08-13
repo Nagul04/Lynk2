@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios'
 import "./Home.css";
-
 const Home = () => {
   const [signInErrors, setSignInErrors] = useState({});
   const [signUpErrors, setSignUpErrors] = useState({});
-
+  const [username,setusername] = useState("")
+  const [password,setpassword] = useState("")
+  const [email,setemail] = useState("")
   const navigate = useNavigate();
 
   const handleFocus = (e) => {
@@ -86,6 +88,16 @@ const Home = () => {
     if (Object.keys(errors).length === 0) {
       navigate('/feed');
     }
+    console.log(username)
+    console.log(email)
+    console.log(password)
+    // send to DB
+    axios.post('http://localhost:2005/adduser',{
+        userName:username,
+        email:email,
+        password:password
+    })
+    
   };
 
   const toggleSignUpMode = () => {
@@ -100,7 +112,7 @@ const Home = () => {
     const bullets = document.querySelectorAll(".bullets span");
     images.forEach((img) => img.classList.remove("show"));
     document.querySelector(`.img-${index}`).classList.add("show");
-    textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+    textSlider.style.transform =` translateY(${-(index - 1) * 2.2}rem)`;
     bullets.forEach((bullet) => bullet.classList.remove("active"));
     document.querySelector(`.bullets span[data-value="${index}"]`).classList.add("active");
   };
@@ -122,7 +134,7 @@ const Home = () => {
               <div className="heading">
                 <h2>Welcome Back</h2>
                 <h6>Not registered yet?</h6>
-                <a href="#" className="toggle" onClick={toggleSignUpMode}>
+                <a href="#" className="toggles" onClick={toggleSignUpMode}>
                   Sign up
                 </a>
               </div>
@@ -178,7 +190,7 @@ const Home = () => {
               <div className="heading">
                 <h2>Get Started</h2>
                 <h6>Already have an account?</h6>
-                <a href="#" className="toggle" onClick={toggleSignUpMode}>
+                <a href="#" className="toggles" onClick={toggleSignUpMode}>
                   Sign in
                 </a>
               </div>
@@ -194,6 +206,8 @@ const Home = () => {
                     required
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    onChange={(e) => setusername(e.target.value)}
+
                   />
                   <label>Name</label>
                   {signUpErrors.name && <p className="error">{signUpErrors.name}</p>}
@@ -208,6 +222,8 @@ const Home = () => {
                     required
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    onChange={(e) => setemail(e.target.value)}
+
                   />
                   <label>Email</label>
                   {signUpErrors.email && <p className="error">{signUpErrors.email}</p>}
@@ -223,12 +239,14 @@ const Home = () => {
                     required
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    onChange={(e) => setpassword(e.target.value)}
+
                   />
                   <label>Password</label>
                   {signUpErrors.password && <p className="error">{signUpErrors.password}</p>}
                 </div>
 
-                <input type="submit" value="Sign Up" className="sign-btn" />
+                <button type="submit" className="sign-btn" >Sign Up</button>
                 <p className="text1">
                   By signing up, I agree to the
                   <a href="#">Terms of Services</a> and
@@ -278,4 +296,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;

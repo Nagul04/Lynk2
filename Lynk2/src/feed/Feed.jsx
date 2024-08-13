@@ -28,7 +28,7 @@ const Feed = () => {
 
   return (
     <div className="app">
-      <Navbar />
+       <Navbar />
       <div className="content">
         <Stories />
         <div className="api-posts">

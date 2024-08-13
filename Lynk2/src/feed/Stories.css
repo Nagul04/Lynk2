@@ -1,17 +1,43 @@
-.stories-container::-webkit-scrollbar {
-  display: none; 
-}
-.stories-container{
-  display: flex;
-  overflow-x: scroll;
-  padding: 10px 0;
-  background-color: #fff;
-  border-bottom: 1px solid #dbdbdb;
-  margin-top: 0px;
+
+.story {
+  margin-right: 10px;
+  text-align: center;
+  cursor: pointer;
+  flex-shrink: 0; 
 }
 
-.friend-name {
+.story img {
+  border-radius: 50%;
+  border: 2px solid lightskyblue;
+  width: 55px; 
+  height: 55px;
+}
+
+.story span {
+  display: block;
+  font-size: 0.8em;
+  color:white;
+  font-weight: bold;
   margin-top: 5px;
-  font-size: 14px;
-  text-align: center;
+}
+.logo2 {
+  margin-top: 10px;
+  width: 120px;
+}
+.logo2container{
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+  position: relative;
+  left: 2px;
+
+}
+.stories-container{
+  background-color: #262626;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+
 }

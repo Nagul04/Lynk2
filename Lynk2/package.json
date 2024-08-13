@@ -18,8 +18,10 @@
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
     "framer-motion": "^11.3.21",
+    "ionicons": "^7.4.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
+    "react-ionicons": "^4.2.1",
     "react-router-dom": "^6.25.1",
     "styled-components": "^6.1.12"
   },

@@ -47,7 +47,7 @@ const Post = React.forwardRef(({ post }, ref) => {
   return (
     <div className="post" ref={ref}>
       <div className="post-header">
-        <img src={`https://via.placeholder.com/30?text=${post.id}`} alt="User avatar" />
+        <img src={`https://via.placeholder.com/30?text=${post.id}`} alt="User avatar"/>
         <span>User {post.id}</span>
       </div>
       <img src={post.url} alt={post.title} className="post-image" />

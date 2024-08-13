@@ -1,37 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-.navbar {
-    display: flex;
-    flex-direction: column;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navvv {
+width: fit-content;
+height: fit-content;
     position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 200%;
-    height: 100%;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    padding-top: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
+    display: flex;
+    top: -2px;
+    z-index: 1000; 
+    left: -5px;
   
-  .navbar-item {
+}
+
+
+
+.navigation {
+    top: 30px;
+    left: 5px;
+    bottom: 20px;
+    width: 70px; 
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid #2e343b;
+    border-right: 10px solid #4087ee;
+    background: #2e343b;
+    transition: width 0.5s;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-  }
-  
-  .navbar-item img {
-    width: 24px;
-    height: 24px;
-    
-  }
-  
-  .navbar-item span {
-    margin-top: 5px;
-    font-size: 12px;
-    color: #262626;
-  }
+    justify-content: space-around; 
+    padding-top: 20px;
+    height: 100vh;
+}
 
-  .navlogo img{
-    width: 109px;
-  }
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+.navigation ul li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    margin-bottom: 20px; 
+}
+
+.navigation ul li.active {
+    background: #4087ee;
+}
+
+.navigation ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    transition: padding-left 0.5s;
+    position: relative; 
+}
+
+.navigation.active ul li a {
+    padding-left: 20px; 
+}
+
+.navigation ul li a .navicon {
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; 
+}
+
+.navigation ul li a .navicon ion-icon {
+    font-size: 1.5em;
+    color: white;
+}
+
+.navigation ul li a .title {
+    opacity: 0;
+    white-space: nowrap;
+    margin-left: 10px;
+    display: none; 
+    transition: opacity 0.5s, display 0.5s;
+    position: absolute;
+    left: 70px; 
+    z-index: 0; 
+    color: white;
+}
+
+.navigation.active ul li a .title {
+    opacity: 1;
+    display: inline-block; 
+}
+
+.toggle {
+    position: fixed;
+    top: 110px; 
+    left: 20px; 
+    z-index: 3; 
+    cursor: pointer;
+    
+}
+
+.toggle.active {
+    left: 80px; 
+}
+

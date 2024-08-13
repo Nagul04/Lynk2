@@ -100,7 +100,7 @@ form.sign-up-form {
   font-weight: bold;
 }
 
-.toggle {
+.toggles{
   color: #151111;
   text-decoration: none;
   font-size: 0.9rem;
@@ -108,7 +108,7 @@ form.sign-up-form {
   transition: 0.3s;
 }
 
-.toggle:hover {
+.toggles:hover {
   color: #8371fd;
 }
 
