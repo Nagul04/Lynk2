@@ -7,7 +7,7 @@ import Profile from './feed/Profile';
 import Settingg from './feed/Settingg';
 import Message from './feed/Message';
 
-const ExternalApp = React.lazy(() => import('D:/Lynk2/create/src/App'));
+const ExternalApp = React.lazy(() => import('/Lynk-Clone/Lynk2/create/src/App.jsx'));
 
 const App = () => {
   return (
