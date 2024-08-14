@@ -21,15 +21,16 @@ app.get('/', async (req,res)=>{
 
 app.post('/adduser', async(req,res)=>{
       const newUser = new userModel(req.body)
+      console.log(newUser)
       try{
             await newUser.save()
+            console.log("Saved New User "+newUser)
       }
       catch(err){
         console.log(err)
       }
 })
 
-
-app.listen(2005,()=>{
-    console.log("server running at http://localhost:2005")
+app.listen(2000,()=>{
+    console.log(`server running at http://localhost:${2000}`)
 })

@@ -92,7 +92,7 @@ const Home = () => {
     console.log(email)
     console.log(password)
     // send to DB
-    axios.post('http://localhost:2005/adduser',{
+    axios.post('http://localhost:2000/adduser',{
         userName:username,
         email:email,
         password:password
